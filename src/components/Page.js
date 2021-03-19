@@ -1,13 +1,22 @@
-import { Breadcrumb, Menu } from "antd";
-import Layout, { Content, Footer, Header } from "antd/lib/layout/layout";
+import Layout, { Header as AntdHeader, Content as AntdContent } from "antd/lib/layout/layout";
 import React from "react";
 import styled from "styled-components";
 
 const Logo = styled.div`
   float: left;
   color: #fff;
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 500;
+  font-size: 1.5rem;
+`;
+
+const Header = styled(AntdHeader)`
+  padding: 0 8em;
+`;
+
+const Content = styled(AntdContent)`
+  background: #fff;
+  height: calc(100vh - 64px);
 `;
 
 const Page = () => {
@@ -15,21 +24,8 @@ const Page = () => {
     <Layout className="layout">
       <Header>
         <Logo>WikipediaMap</Logo>
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-          <Menu.Item key="1">nav 1</Menu.Item>
-          <Menu.Item key="2">nav 2</Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
-        </Menu>
       </Header>
-      <Content style={{ padding: "0 50px" }}>
-        <Breadcrumb style={{ margin: "16px 0" }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
-        <div className="site-layout-content">Content</div>
-      </Content>
-      <Footer style={{ textAlign: "center" }}>Ant Design ©2018 Created by Ant UED</Footer>
+      <Content></Content>
     </Layout>
   );
 };
