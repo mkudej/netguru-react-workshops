@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import GoogleMapReact from "google-map-react";
+import { getArticles } from "../services/wikipedia";
 
 const Map = () => {
   const gdanskCenterPoint = {
@@ -7,6 +8,14 @@ const Map = () => {
     lng: 18.6598646,
   };
   const defaultZoom = 10;
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const articles = await getArticles(gdanskCenterPoint);
+      console.log(articles);
+    };
+    fetchArticles();
+  }, []);
 
   return (
     <>
