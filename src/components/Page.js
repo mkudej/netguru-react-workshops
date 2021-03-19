@@ -1,6 +1,7 @@
 import Layout, { Header as AntdHeader, Content as AntdContent } from "antd/lib/layout/layout";
 import React from "react";
 import styled from "styled-components";
+import Map from "./Map";
 
 const Logo = styled.div`
   float: left;
@@ -25,7 +26,9 @@ const Page = () => {
       <Header>
         <Logo>WikipediaMap</Logo>
       </Header>
-      <Content></Content>
+      <Content>
+        <Map />
+      </Content>
     </Layout>
   );
 };
